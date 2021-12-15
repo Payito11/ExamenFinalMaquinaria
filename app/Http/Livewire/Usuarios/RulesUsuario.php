@@ -11,7 +11,7 @@ class RulesUsuario
             [
                 'usuario.nombre' => 'required|string',
                 'usuario.email' => 'required|string',
-                'usuario.pwd' => 'required|string',
+                'usuario.password' => 'string',
                 'foto'=>'nullable|image'
             ];
     }

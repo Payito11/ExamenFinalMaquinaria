@@ -4,7 +4,7 @@
         <div class="col-md-4">
             <div class="mb-3 input-group">
                 <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
-                <input wire:model="search" type="search" class="form-control" placeholder="Buscar usuario..."
+                <input wire:model="search" type="search" class="form-control" placeholder="Buscar cliente..."
                     aria-label="Username" aria-describedby="basic-addon1">
             </div>
 
@@ -14,7 +14,7 @@
         <div class="col-md-8">
             <div class="float-right mb-2">
                 <a href="{{ route('usuarios.create') }}" type="button" class="btn-sm btn btn-success"><i
-                        class="fa fa-plus-circle"></i> Agregar un nuevo usuario</a>
+                        class="fa fa-plus-circle"></i> Agregar un nuevo cliente</a>
             </div>
         </div>
     </div>
@@ -26,7 +26,7 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th>Foto</th>
-                    <th scope="col">Nombre del usuario</th>
+                    <th scope="col">Nombre del cliente</th>
                     <th scope="col">Email</th>
                     <th scope="col">Contraseña</th>
                     <th>Opciones</th>
@@ -44,7 +44,7 @@
                         </th>
                         <td>{{ $usuario->nombre }}</td>
                         <td>{{ $usuario->email }}</td>
-                        <td>{{ $usuario->pwd }}</td>
+                        <td>{{ $usuario->password }}</td>
                         <td>
                             <a href="{{ route('usuarios.mostrar', $usuario) }}" title="Mostrar más"
                                 class="btn-sm btn btn-info"><i class="fa fa-eye"></i></a>

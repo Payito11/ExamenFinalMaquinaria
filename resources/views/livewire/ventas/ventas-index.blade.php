@@ -13,44 +13,40 @@
 
         <div class="col-md-8">
             <div class="float-right mb-2">
-                <a href="{{ route('cursos.create') }}" type="button" class="btn-sm btn btn-success"><i
-                        class="fa fa-plus-circle"></i> Agregar una nueva maquina</a>
+                <a href="{{ route('ventas.create') }}" type="button" class="btn-sm btn btn-success"><i
+                        class="fa fa-plus-circle"></i> Agregar una venta</a>
             </div>
         </div>
     </div>
 
 
-    @if (count($cursos) > 0)
+    @if (count($ventas) > 0)
         <table class="table text-center table-striped">
             <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th>Foto</th>
-                    <th scope="col">Tipo de maquina</th>
-                    <th scope="col">Marca</th>
-                    <th scope="col">Precio</th>
+                    <th>Nombre del cliente</th>
+                    <th scope="col">Maquinaria comprada</th>
+                    <th scope="col">Fecha de la compra</th>
                     <th>Opciones</th>
                 </tr>
             </thead>
             <tbody>
 
-                @foreach ($cursos as $curso)
+                @foreach ($ventas as $venta)
                     <tr>
-                        <th scope="row">{{ $curso->id }}</th>
-                        <th>
-                            <img style="width: 40px;height:40px;"
-                                src="{{ Storage::disk('public')->url($curso->foto ? $curso->foto : 'images/cursos/default.png') }}"
-                                alt="">
-                        </th>
-                        <td>{{ $curso->curso }}</td>
-                        <td>{{ $curso->categoria }}</td>
-                        <td>{{ $curso->precio }}</td>
+                        <th scope="row">{{ $venta->id }}</th>
+                       
+                        <td>{{ $venta->nombre }}</td>
+                        <td>{{ $venta->curso }}</td>
+                        <td>{{ $venta->created_at }}</td>
+
                         <td>
-                            <a href="{{ route('cursos.mostrar', $curso) }}" title="Mostrar más"
+                            <a href="" title="Mostrar más"
                                 class="btn-sm btn btn-info"><i class="fa fa-eye"></i></a>
-                            <a href="{{ route('cursos.edit', $curso) }}" title="Editar curso"
+                            <a href="" title="Editar curso"
                                 class="btn-sm btn btn-primary"><i class="fa fa-edit"></i></a>
-                            <a href="{{ route('cursos.delete', $curso) }}" title="Eliminar curso seleccionado más"
+                            <a href="" title="Eliminar curso seleccionado más"
                                 class="btn-sm btn btn-danger"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
@@ -64,5 +60,6 @@
             src="{{ Storage::disk('public')->url('images/otros/loading.gif') }}" alt="">
     @endif
 
-    {{ $cargado == true ? $cursos->links() : null }}
+    {{ $cargado == true ? $ventas->links() : null }}
 </div>
+

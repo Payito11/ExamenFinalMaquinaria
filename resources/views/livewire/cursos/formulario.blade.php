@@ -29,13 +29,13 @@
 
     <div class="mx-auto col-6">
         <div class="form-group">
-            <label>Curso</label>
+            <label>Tipo de maquina</label>
             <input wire:model.defer="curso.curso" type="text" class="form-control">
             @error('curso.curso') <span class="text-danger">{{ $message }}</span>@enderror
         </div>
 
         <div class="form-group">
-            <label>Categoria</label>
+            <label>Marca</label>
             <input wire:model.defer="curso.categoria" type="text" class="form-control">
             @error('curso.categoria') <span class="text-danger">{{ $message }}</span>@enderror
 
@@ -46,11 +46,11 @@
             <label>Precio</label>
             <input wire:model="curso.precio" type="text" class="form-control">
             @error('curso.precio') <span class="text-danger">{{ $message }}</span>@enderror
-            <span>{{ $curso->precio >= 1000 ? 'Esta muy caro' : '' }}</span>
+            <span>{{ $curso->precio >= 1000 ? '' : '' }}</span>
         </div>
 
         <div class="form-group">
-            <label>Subtitulos</label>
+            <label>Color</label>
             <input wire:model.defer="curso.subtitulos" type="text" class="form-control">
             @error('curso.subtitulos') <span class="text-danger">{{ $message }}</span>@enderror
 

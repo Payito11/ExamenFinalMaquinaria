@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Usuarios;
 
 use App\Http\Livewire\Usuarios\RulesUsuario;
 use App\Models\usuario;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -27,10 +28,11 @@ class UsuariosCreate extends Component
 
     public function crear()
     {
-        $this->validate();
+         $this->validate();
         if ($this->foto != null) {
             $this->usuario->foto = Storage::disk('public')->put('images/usuarios', $this->foto);
         }
+        $this->usuario->password = Hash::make($this->usuario->password);
         $this->usuario->save();
         return redirect(route('usuarios.index'));
     }

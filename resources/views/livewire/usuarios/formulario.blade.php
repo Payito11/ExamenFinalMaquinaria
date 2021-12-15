@@ -43,8 +43,8 @@
 
         <div class="form-group">
             <label>Password</label>
-            <input wire:model.defer="usuario.pwd" type="text" class="form-control">
-            @error('usuario.pwd') <span class="text-danger">{{ $message }}</span>@enderror
+            <input wire:model.defer="usuario.password" type="text" class="form-control">
+            @error('usuario.password') <span class="text-danger">{{ $message }}</span>@enderror
 
         </div>
 

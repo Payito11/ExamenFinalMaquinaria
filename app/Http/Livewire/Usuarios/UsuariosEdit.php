@@ -4,6 +4,8 @@ namespace App\Http\Livewire\Usuarios;
 
 use App\Models\Usuario;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Hash;
+
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -25,6 +27,8 @@ class UsuariosEdit extends Component
             }
             $this->usuario->foto = Storage::disk('public')->put('images/usuarios', $this->foto);
         }
+        $this->usuario->password = Hash::make($this->usuario->password);
+
         $this->usuario->save();
         return redirect(route('usuarios.index'));
     }

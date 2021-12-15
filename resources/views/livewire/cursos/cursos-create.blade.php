@@ -2,7 +2,7 @@
     <form wire:submit.prevent="crear">
         <div class="card">
             <div class="card-header">
-                Crear curso
+               Subir una maquina
             </div>
             <div class="card-body">
                 @include('livewire.cursos.formulario')

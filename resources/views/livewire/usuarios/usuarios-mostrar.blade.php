@@ -5,7 +5,7 @@
         <div class="text-center card-body">
             <h5 class="card-title">{{ $usuario->nombre }}</h5>
             <span class="card-text">Email: {{ $usuario->email }}</span><br>
-            <small class="card-text">Password: {{ $usuario->pwd }}</small>
+            <small class="card-text">Password: {{ $usuario->password }}</small>
             <a href="{{route('usuarios.index')}}" class="btn btn-primary d-block"><i class="fa fa-home"></i> Regresar</a>
         </div>
     </div>

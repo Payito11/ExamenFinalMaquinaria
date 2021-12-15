@@ -20,9 +20,16 @@
 
 <nav class= "navbar navbar-dark bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Duran</a>
-    <a class="text-white nav-link" href="{{route('cursos.index')}}">Cursos</a>
-    <a class="text-white nav-link" href="{{route('usuarios.index')}}">Usuarios</a>
+      @if (Auth::check())
+            <a class="navbar-brand" href="#"><img style="border_radius:17px;width:50px;height:50px; "
+            src="{{\Illuminate\Support\Facades\storage::disk('public')->url(Auth::user()->foto ? Auth::user()->foto : 'images/usuarios/default.png')}}">Hola de nuevo  {{Auth::user()->nombre}}</a>
+    @endif
+    @if (Auth::check())
+    <a class="text-white nav-link" href="{{route('cursos.index')}}">Maquinaria</a>
+    <a class="text-white nav-link" href="{{route('usuarios.index')}}">Clientes</a>
+    <a class="text-white nav-link" href="{{route('ventas.index')}}">Compras</a>
+    @livewire("login.logout")
+    @endif
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     </button>
@@ -35,6 +42,8 @@
 
 
     @livewireScripts
+
+
 </body>
 
 </html>

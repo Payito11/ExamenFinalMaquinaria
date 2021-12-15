@@ -18,7 +18,7 @@ class CreateUsuariosTable extends Migration
             $table->string('nombre');
             $table->string('foto')->nullable();
             $table->string('email');
-            $table->string('pwd');
+            $table->string('password');
             $table->timestamps();
         });
     }

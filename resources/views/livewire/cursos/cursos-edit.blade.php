@@ -2,7 +2,7 @@
     <form wire:submit.prevent="editar">
         <div class="card">
             <div class="card-header">
-                Modificar curso
+                Modificar maquinaria
             </div>
             <div class="card-body">
                 @include('livewire.cursos.formulario')
